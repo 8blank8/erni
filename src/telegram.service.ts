@@ -2,7 +2,7 @@ import { config } from 'dotenv'
 config()
 import { Injectable } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
-import TelegramBot from 'node-telegram-bot-api'
+import TelegramBot = require('node-telegram-bot-api');
 import { ChatGPTService } from './open-ai.service';
 
 export class TelegramMessageDto {
