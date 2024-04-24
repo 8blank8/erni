@@ -2,10 +2,8 @@ import { config } from 'dotenv'
 config()
 import { Injectable } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
-// import * as TelegramBot from 'node-telegram-bot-api';
-import * as TelegramBot from 'node-telegram-bot-api';
+import * as TelegramBot from 'node-telegram-bot-api'; // Импортируем TelegramBot напрямую
 import { ChatGPTService } from './open-ai.service';
-// import TelegramBot from 'node-telegram-bot-api'
 
 export class TelegramMessageDto {
     message_id: number
@@ -50,10 +48,6 @@ export class TelegramBotService {
             if (msg.text && msg.text.includes('эрни')) {
                 this.bot.sendMessage(chatId, `${chatId}`)
             }
-
-            // if (msg.text) {
-            //     this.bot.sendMessage(chatId, `Это ты мне сказал? "${msg.text}"`);
-            // }
         });
     }
 
